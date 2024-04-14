@@ -5,7 +5,7 @@
 
     Author: Maxwell "Marri" Silver "Taylor"
 
-    Date Last Edited: 1-4-24 (29th of March 2024)
+    Date Last Edited: 13-4-24 (13th of April 2024)
 */
 
 @font-face {
@@ -41,13 +41,24 @@
     src: url('../assests/fonts/Poppins/Poppins-LightItalic.ttf')
 }
 
+@keyframes dropdown {
+    0% {
+        max-height:0px;
+    }
+    100% {
+        max-height:500px;
+    }
+}
+
 
 body {
     margin: 0px;
 }
-
-
-
+main {
+    padding: 0px 15px;
+    max-width: 1500px;
+    margin: 5px auto;
+}
 /*========
 Font Styles
 ========*/
@@ -95,11 +106,22 @@ p.roboto {
 section#depend-first {
     display: none;
 }
+section#depend-last {
+    margin: 10px;
+}
 
 /*=====
 Nav Bar
 =====*/
+#reach h4{
+    padding: 0px;
+}
 
+.container h4 {padding: 10px 15px; border-radius: 5px;}
+
+.container > h4:hover {
+    background-color: #2b3546;
+}
 
 a {
     text-decoration: none;
@@ -123,7 +145,7 @@ nav section {
 header {
     z-index: 1000;
     background-color: #1c3866;
-    border-bottom: 5px double hsl(0deg, 0%, 69%);
+    
 }
 
 ul.hidden {
@@ -151,7 +173,7 @@ nav, nav > section {
 }
 
 nav section section  {
-    padding: 15px;
+    padding: 0px;
     background-color: #1c3866;
     background-origin: border-box;
 }
@@ -160,13 +182,7 @@ nav section section  {
 section > .container {
     position: relative;
     display: block;
-    border-left: 5px dashed hsl(0deg, 0%, 69%);
 }
-
-nav section > section:last-of-type {
-    border-right: 5px dashed hsl(0deg, 0%, 69%);
-}
-
 
 nav section section > ul {
     position: absolute;
@@ -209,6 +225,8 @@ a.name {
 
 .hidden {
     display: none;
+    max-height: 0px;
+    overflow: hidden;
 }
 
 .what > li > a *, div#software-title * {
@@ -227,7 +245,6 @@ section > ul > .hidden li:last-of-type {
     margin-bottom: 5px;
 }
 
-
 .container:hover > ul,
 .container:hover > ul,
 .software:hover > ul,
@@ -237,6 +254,8 @@ section > ul > .hidden li:last-of-type {
     display: block;
     left: 10%;
     right: 10%;
+    animation: 1.5s ease-out dropdown;
+    max-height: 500px;
 }
 
 ul.hidden  a {
@@ -248,8 +267,7 @@ ul.software li {
 }
 
 section > ul.hidden {
-    border: 3px double hsl(0deg, 0%, 69%);
-    border-top: none;
+    
     background-color: #1c3866;
     background-clip: border-box;
     border-radius: 0px 0px 5px 5px;
@@ -264,12 +282,13 @@ ul.what > li.software {
 ul.software li:hover, li.hardware:hover, div#software-title:hover {
     background-color: #2b3546;
 }
-
+ 
 nav section a:hover {
     background-color: #c2d3f0;
     background-origin: border-box;
     text-decoration-style: dashed;
     text-decoration-color: #303030;
+    color: #303030;
 }
 
 nav a:hover * {
@@ -332,7 +351,7 @@ Footer
     66.67% { color: #0000ff; } 
     83.33% { color: #4b0082; } 
     100% { color: #9400d3; } 
-  }
+}
 
 footer {
     background-color: #1c3866;
@@ -347,13 +366,10 @@ footer * {
 footer a {
     text-decoration: underline solid;
 }
-
 a#icons8:hover {
     color: #c8d3ff;
     text-decoration-color: #c8d3ff;
 }
-
-
 div#author a:hover {
     animation: rainbow-animation 3s infinite;
 }
@@ -371,30 +387,40 @@ section#socials {
     justify-content: center;
 }
 
+#socials a {
+    width: fit-content;
+    margin: 0px auto;
+    text-align: center;
+}
+
 section#socials img {
     width: 85px;
 }
-
+section#socials a img:last-of-type {
+    display: none;
+}
+section#socials a:hover img:first-of-type {
+    display: none;
+}
+section#socials a:hover img:last-of-type {
+    display: inline-block;
+}
 section#credits * {
     font-family: 'Poppins-LightItalic';
 }
-
 section#credits {
     text-align: center;
     border-left: 3px double hsl(0deg, 0%, 69%);
 }
-
 div#icons * {
     font-size: 0.5rem;
 }
-
 div#author {
     border-bottom: 3px double hsl(0deg, 0%, 69%);
     width: fit-content;
     margin: 0px auto;
     padding-bottom: 5px;
 }
-
 div#author * {
     font-size: 0.65rem;
     margin: 0px;
@@ -418,7 +444,7 @@ div#author * {
     }
     nav > section > section {
         margin: 0px auto;
-        border-right: 5px dashed hsl(0deg, 0%, 69%);
+        
     }
 }
 
@@ -447,9 +473,4 @@ div#author * {
     section#depend-last {
         display: none;
     }
-    nav > section > section:nth-of-type(2), nav > section > section:nth-of-type(3) {
-        border-top: 5px dashed hsl(0deg, 0%, 69%);
-    }
-
-
 }
